@@ -21,14 +21,6 @@ License:        MIT
 URL:            %{gourl}
 Source:         %{gosource}
 
-BuildRequires:  golang(github.com/go-kit/kit/log)
-BuildRequires:  golang(github.com/go-kit/kit/log/level)
-BuildRequires:  golang(github.com/mdlayher/genetlink)
-BuildRequires:  golang(github.com/mdlayher/netlink)
-BuildRequires:  golang(github.com/mdlayher/netlink/nlenc)
-BuildRequires:  golang(github.com/pelletier/go-toml)
-BuildRequires:  golang(golang.org/x/sys/unix)
-
 %description %{common_description}
 
 %gopkg
