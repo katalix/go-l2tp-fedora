@@ -57,7 +57,9 @@ install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/ql2tpd.toml.5   %{buildr
 %files
 %license LICENSE
 %doc CHANGELOG.md README.md
-%{_bindir}/*
+%{_bindir}/kl2tpd
+%{_bindir}/kpppoed
+%{_bindir}/ql2tpd
 %{_mandir}/man{1,5}/*.{1,5}*
 
 %gopkgfiles
