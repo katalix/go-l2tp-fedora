@@ -41,13 +41,13 @@ done
 %gopkginstall
 install -m 0755 -vd                                                     %{buildroot}%{_bindir}
 install -m 0755 -vp %{gobuilddir}/bin/*                                 %{buildroot}%{_bindir}/
-install -m 0755 -vd                                                     %{buildroot}%{_mandir}/1
-install -m 0755 -vp %{_builddir}/go-l2tp-%{version}/doc/kl2tpd.1        %{buildroot}%{_mandir}/1
-install -m 0755 -vp %{_builddir}/go-l2tp-%{version}/doc/kpppoed.1       %{buildroot}%{_mandir}/1
-install -m 0755 -vp %{_builddir}/go-l2tp-%{version}/doc/ql2tpd.1        %{buildroot}%{_mandir}/1
-install -m 0755 -vd                                                     %{buildroot}%{_mandir}/5
-install -m 0755 -vp %{_builddir}/go-l2tp-%{version}/doc/kl2tpd.toml.5    %{buildroot}%{_mandir}/5
-install -m 0755 -vp %{_builddir}/go-l2tp-%{version}/doc/ql2tpd.toml.5   %{buildroot}%{_mandir}/5
+install -m 0755 -vd                                                     %{buildroot}%{_mandir}/man1
+install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/kl2tpd.1        %{buildroot}%{_mandir}/man1
+install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/kpppoed.1       %{buildroot}%{_mandir}/man1
+install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/ql2tpd.1        %{buildroot}%{_mandir}/man1
+install -m 0755 -vd                                                     %{buildroot}%{_mandir}/man5
+install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/kl2tpd.toml.5   %{buildroot}%{_mandir}/man5
+install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/ql2tpd.toml.5   %{buildroot}%{_mandir}/man5
 
 %if %{with check}
 %check
@@ -58,7 +58,7 @@ install -m 0755 -vp %{_builddir}/go-l2tp-%{version}/doc/ql2tpd.toml.5   %{buildr
 %license LICENSE
 %doc CHANGELOG.md README.md
 %{_bindir}/*
-%{_mandir}/*/*
+%{_mandir}/man{1,5}/*.{1,5}*
 
 %gopkgfiles
 
