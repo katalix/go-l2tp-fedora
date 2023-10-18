@@ -3,7 +3,7 @@
 
 # https://github.com/katalix/go-l2tp
 %global goipath         github.com/katalix/go-l2tp
-Version:                0.1.2
+Version:                0.1.6
 
 %gometa -f
 
@@ -39,12 +39,12 @@ done
 
 %install
 %gopkginstall
-install -m 0755 -vd                                                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/*                                 %{buildroot}%{_bindir}/
-install -m 0755 -vd                                                     %{buildroot}%{_mandir}/man1
-install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/kl2tpd.1        %{buildroot}%{_mandir}/man1
-install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/kpppoed.1       %{buildroot}%{_mandir}/man1
-install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/ql2tpd.1        %{buildroot}%{_mandir}/man1
+install -m 0755 -vd                                                     %{buildroot}%{_sbindir}
+install -m 0755 -vp %{gobuilddir}/bin/*                                 %{buildroot}%{_sbindir}/
+install -m 0755 -vd                                                     %{buildroot}%{_mandir}/man8
+install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/kl2tpd.8        %{buildroot}%{_mandir}/man8
+install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/kpppoed.8       %{buildroot}%{_mandir}/man8
+install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/ql2tpd.8        %{buildroot}%{_mandir}/man8
 install -m 0755 -vd                                                     %{buildroot}%{_mandir}/man5
 install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/kl2tpd.toml.5   %{buildroot}%{_mandir}/man5
 install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/ql2tpd.toml.5   %{buildroot}%{_mandir}/man5
@@ -57,10 +57,10 @@ install -m 0644 -vp %{_builddir}/go-l2tp-%{version}/doc/ql2tpd.toml.5   %{buildr
 %files
 %license LICENSE
 %doc CHANGELOG.md README.md
-%{_bindir}/kl2tpd
-%{_bindir}/kpppoed
-%{_bindir}/ql2tpd
-%{_mandir}/man{1,5}/*.{1,5}*
+%{_sbindir}/kl2tpd
+%{_sbindir}/kpppoed
+%{_sbindir}/ql2tpd
+%{_mandir}/man{8,5}/*.{8,5}*
 
 %gopkgfiles
 
