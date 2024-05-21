@@ -3,7 +3,7 @@
 
 # https://github.com/katalix/go-l2tp
 %global goipath         github.com/katalix/go-l2tp
-Version:                0.1.6
+Version:                0.1.8
 
 %gometa -f
 
